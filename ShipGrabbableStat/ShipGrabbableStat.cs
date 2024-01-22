@@ -9,7 +9,7 @@ namespace ShipGrabbableStat
     [BepInPlugin(GUID, NAME, VERSION)]
     internal class ShipGrabbableStat : BaseUnityPlugin
     {
-        public const string GUID = "com.github.tinymins.ShipGrabbableStat";
+        public const string GUID = "com.zhaiyiming.github.tinymins.ShipGrabbableStat";
         public const string NAME = "ShipGrabbableStat";
         public const string VERSION = "1.0";
 
