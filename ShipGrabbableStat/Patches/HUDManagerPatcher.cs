@@ -70,7 +70,9 @@ namespace ShipGrabbableStat.Patches
                 var itemName = statGrabbable[0];
                 var itemText = statGrabbable.Length > 1 ? statGrabbable[1] : statGrabbable[0];
                 int itemCount = allGrabbables.Count(item => item.itemProperties.itemName == itemName);
-                sb.AppendLine($"{itemText} x{itemCount}");
+                if (itemCount != 0 || !ShipGrabbableStat.HideZeroItems.Value) { 
+                    sb.AppendLine($"{itemText} x{itemCount}");
+                }
             }
 
             return sb.ToString();
