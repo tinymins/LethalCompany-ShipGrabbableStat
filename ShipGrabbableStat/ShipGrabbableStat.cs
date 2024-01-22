@@ -11,7 +11,7 @@ namespace ShipGrabbableStat
     {
         public const string GUID = "com.zhaiyiming.github.tinymins.ShipGrabbableStat";
         public const string NAME = "ShipGrabbableStat";
-        public const string VERSION = "1.0.1";
+        public const string VERSION = "1.0.2";
 
         internal static ManualLogSource Log;
         internal static ConfigEntry<string> StatGrabbables;

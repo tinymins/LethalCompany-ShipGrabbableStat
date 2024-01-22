@@ -1,6 +1,6 @@
 {
   "name": "ShipGrabbableStat",
-  "version_number": "1.0.1",
+  "version_number": "1.0.2",
   "website_url": "https://github.com/tinymins/ShipGrabbableStat",
   "description": "Reliably shows the total count of specific grabbables in your ship.",
   "dependencies": [
