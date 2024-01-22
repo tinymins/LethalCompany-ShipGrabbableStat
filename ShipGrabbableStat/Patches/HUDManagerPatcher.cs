@@ -63,12 +63,12 @@ namespace ShipGrabbableStat.Patches
             allGrabbables.Do(scrap => ShipGrabbableStat.Log.LogDebug($"{scrap.itemProperties.itemName} - ${scrap.scrapValue}"));
 
             var sb = new StringBuilder();
-            var countItems = ShipGrabbableStat.CountItems.Value.Split(',')
+            var statGrabbables = ShipGrabbableStat.StatGrabbables.Value.Split(',')
                 .Select(i => i.Trim().Split(new string[] { "::" }, StringSplitOptions.None));
-            foreach (var countItem in countItems)
+            foreach (var statGrabbable in statGrabbables)
             {
-                var itemName = countItem[0];
-                var itemText = countItem.Length > 1 ? countItem[1] : countItem[0];
+                var itemName = statGrabbable[0];
+                var itemText = statGrabbable.Length > 1 ? statGrabbable[1] : statGrabbable[0];
                 int itemCount = allGrabbables.Count(item => item.itemProperties.itemName == itemName);
                 sb.AppendLine($"{itemText} x{itemCount}");
             }
