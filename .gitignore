@@ -1,0 +1,9 @@
+/.idea/
+/.vs/
+packages
+Releases
+**/.vs/
+**/bin/
+**/obj/
+**/GameDirectory.targets
+ShipGrabbableStat.sln.DotSettings.user
