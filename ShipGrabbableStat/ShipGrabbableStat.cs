@@ -19,7 +19,7 @@ namespace ShipGrabbableStat
         private void Awake()
         {
             Log = Logger;
-            StatGrabbables = Config.Bind("Settings", "StatGrabbables", "Pro-flashlight::Pro Flashlight,Shovel,Stun grenade::Stun Grenade,Rocket Launcher,Spray paint::Spray Paint,TZP-Inhalant", "Item names which will be counted while scan in ship, splitted by \",\", use \"::\" to set item name alias for display.");
+            StatGrabbables = Config.Bind("Settings", "StatGrabbables", "Pro-flashlight,Shovel,Stun grenade::Stun Grenade,Spray paint::Spray Paint,TZP-Inhalant,Rocket Launcher,Jetpack,Boombox,Lockpicker,Extension ladder::Extension Ladder", "Item names which will be counted while scan in ship, splitted by \",\", use \"::\" to set item name alias for display.");
 
             Harmony harmony = new Harmony(GUID);
             harmony.PatchAll(Assembly.GetExecutingAssembly());
