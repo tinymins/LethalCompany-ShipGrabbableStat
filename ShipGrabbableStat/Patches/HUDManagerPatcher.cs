@@ -1,4 +1,5 @@
 using HarmonyLib;
+using System;
 using System.Collections;
 using System.Linq;
 using System.Text;
@@ -62,11 +63,14 @@ namespace ShipGrabbableStat.Patches
             allGrabbables.Do(scrap => ShipGrabbableStat.Log.LogDebug($"{scrap.itemProperties.itemName} - ${scrap.scrapValue}"));
 
             var sb = new StringBuilder();
-            var countItemNames = ShipGrabbableStat.CountItemNames.Value.Split(',').Select(i => i.Trim());
-            foreach (var itemName in countItemNames)
+            var countItems = ShipGrabbableStat.CountItems.Value.Split(',')
+                .Select(i => i.Trim().Split(new string[] { "::" }, StringSplitOptions.None));
+            foreach (var countItem in countItems)
             {
+                var itemName = countItem[0];
+                var itemText = countItem.Length > 1 ? countItem[1] : countItem[0];
                 int itemCount = allGrabbables.Count(item => item.itemProperties.itemName == itemName);
-                sb.AppendLine($"{itemName} x{itemCount}");
+                sb.AppendLine($"{itemText} x{itemCount}");
             }
 
             return sb.ToString();

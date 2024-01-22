@@ -14,12 +14,12 @@ namespace ShipGrabbableStat
         public const string VERSION = "1.0";
 
         internal static ManualLogSource Log;
-        internal static ConfigEntry<string> CountItemNames;
+        internal static ConfigEntry<string> CountItems;
 
         private void Awake()
         {
             Log = Logger;
-            CountItemNames = Config.Bind("Settings", "CountItemNames", "Pro-flashlight,Shovel,Stun grenade,Rocket Launcher,Spray paint,TZP-Inhalant", "Item names which will be counted while scan in ship, splitted by \",\".");
+            CountItems = Config.Bind("Settings", "CountItems", "Pro-flashlight::Pro Flashlight,Shovel,Stun grenade::Stun Grenade,Rocket Launcher,Spray paint::Spray Paint,TZP-Inhalant", "Item names which will be counted while scan in ship, splitted by \",\", use \"::\" to set item name alias for display.");
 
             Harmony harmony = new Harmony(GUID);
             harmony.PatchAll(Assembly.GetExecutingAssembly());
