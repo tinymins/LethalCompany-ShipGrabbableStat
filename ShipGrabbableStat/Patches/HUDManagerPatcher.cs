@@ -59,8 +59,6 @@ namespace ShipGrabbableStat.Patches
         {
             GameObject ship = GameObject.Find("/Environment/HangarShip");
             var allGrabbables = ship.GetComponentsInChildren<GrabbableObject>().ToList();
-            ShipGrabbableStat.Log.LogDebug("Calculating total ship scrap value.");
-            allGrabbables.Do(scrap => ShipGrabbableStat.Log.LogDebug($"{scrap.itemProperties.itemName} - ${scrap.scrapValue}"));
 
             var sb = new StringBuilder();
             var statGrabbables = ShipGrabbableStat.StatGrabbables.Value.Split(',')
@@ -70,7 +68,8 @@ namespace ShipGrabbableStat.Patches
                 var itemName = statGrabbable[0];
                 var itemText = statGrabbable.Length > 1 ? statGrabbable[1] : statGrabbable[0];
                 int itemCount = allGrabbables.Count(item => item.itemProperties.itemName == itemName);
-                if (itemCount != 0 || !ShipGrabbableStat.HideZeroItems.Value) { 
+                if (itemCount != 0 || !ShipGrabbableStat.HideZeroItems.Value)
+                {
                     sb.AppendLine($"{itemText} x{itemCount}");
                 }
             }
@@ -83,6 +82,9 @@ namespace ShipGrabbableStat.Patches
         /// </summary>
         private static void CopyValueCounter()
         {
+            var allItemNames = string.Join(", ", StartOfRound.Instance.allItemsList.itemsList.Select(item => $"{item.itemName}").ToList());
+            ShipGrabbableStat.Log.LogDebug($"List all items: {allItemNames}");
+
             GameObject valueCounter = GameObject.Find("/Systems/UI/Canvas/IngamePlayerHUD/BottomMiddle/ValueCounter");
             if (!valueCounter)
                 ShipGrabbableStat.Log.LogError("Failed to find ValueCounter object to copy!");
