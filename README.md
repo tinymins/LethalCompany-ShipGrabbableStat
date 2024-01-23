@@ -14,6 +14,6 @@ from inside the ship and will always show the total grabbables counts.
 ## Installation
 
 - Install [BepInEx](https://thunderstore.io/c/lethal-company/p/BepInEx/BepInExPack/)
-- Unzip this mod into your `Lethal Company/BepInEx` folder
+- Unzip this mod into your `Lethal Company/BepInEx/plugins/ShipGrabbableStat` folder
 
 Or use the thunderstore mod manager to handle the installing for you.
