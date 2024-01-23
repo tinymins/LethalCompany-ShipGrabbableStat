@@ -34,7 +34,7 @@
         <!-- Where to create the temporary directory for creating the release zip files. -->
         <TempZipDir>$(OutputPath)ZipMeUp</TempZipDir>
         <!-- The internal structure of the zip file. -->
-        <ZipStructure>plugins\$(AssemblyName)</ZipStructure>
+        <ZipStructure>.</ZipStructure>
     </PropertyGroup>
 
     <!-- Copy newly built files to the game directory. -->
