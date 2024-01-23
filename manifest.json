@@ -1,6 +1,6 @@
 {
   "name": "ShipGrabbableStat",
-  "version_number": "1.0.5",
+  "version_number": "1.0.6",
   "website_url": "https://github.com/tinymins/LethalCompany-ShipGrabbableStat",
   "description": "Reliably shows the total count of specific grabbables in your ship.",
   "dependencies": [
